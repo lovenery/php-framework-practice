@@ -4,18 +4,10 @@ require 'function.php';
 // $fuck = ["123","213"];
 // dd($fuck);
 
+require 'bootstrap.php';
 require 'Task.php';
-try {
-    $pdo = new PDO('mysql:host=127.0.0.1;dbname=mytodo','root','');
-} catch (PDOException $e) {
-    die($e->getMessage());
-}
-$statement = $pdo->prepare('select * from todos');
-$statement->execute();
-// $tasks = $statement->fetchAll(PDO::FETCH_OBJ);
-$tasks = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
-var_dump($tasks);
 
+$tasks = $query->selectAll('todos', 'Task');
 
 foreach ($tasks as $task) {
    echo $task->description;
