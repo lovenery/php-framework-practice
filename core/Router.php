@@ -27,7 +27,8 @@ class Router
     public function direct($uri, $requestType)
     {
         if (array_key_exists($uri, $this->routes[$requestType])) {
-            //return $this->routes[$requestType][$uri]; // return PagesController@home
+            // return $this->routes[$requestType][$uri]; // 之前是 controllers/index.php之類的東東
+            // $this->routes[$requestType][$uri]; // 現在是 PagesController@home
             return $this->callAction(
                 // ... 傳進去的參數自動對上
                 ...explode('@', $this->routes[$requestType][$uri]) // array: A[0]=PagesController, A[1]=home
