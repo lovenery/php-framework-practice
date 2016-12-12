@@ -7,10 +7,12 @@
     <button type="submit">Submit</button>
 </form>
 
+<ul>
 <?php
     foreach ($users as $user) {
-       echo $user->name . ',';
+       echo "<li>{$user->name}</li>";
     }
 ?>
+</ul>
 
 <?php require('partials/footer.php'); ?>

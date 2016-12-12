@@ -7,5 +7,7 @@ require 'function.php';
 require 'vendor/autoload.php';
 require 'core/bootstrap.php';
 
+// require Router::load('routes.php')->direct(Request::uri(), Request::method());
+// 之前是require一個controller的php檔, 現在在裡面有直接new一個controller
 Router::load('routes.php')
     ->direct(Request::uri(), Request::method());
