@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\App;
+
 // $app = [];
 // $app['config'] = require 'config.php';
 //

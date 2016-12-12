@@ -13,7 +13,7 @@ class QueryBuilder
     {
         $statement = $this->pdo->prepare("select * from {$table}");
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
+        return $statement->fetchAll(PDO::FETCH_CLASS, "App\\Models\\{$intoClass}");
     }
 
     public function insert($table, $parameters)

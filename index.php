@@ -4,6 +4,9 @@ require 'function.php';
 // php --interactive == php -a
 ////////////////////////
 
+use App\Core\Router;
+use App\Core\Request;
+
 require 'vendor/autoload.php';
 require 'core/bootstrap.php';
 

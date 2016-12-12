@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Router
 {
     protected $routes = [
@@ -39,6 +41,7 @@ class Router
 
     protected function callAction($controllerName, $action)
     {
+        $controllerName = "App\\Controllers\\{$controllerName}"; // 兩個斜線是印出斜線
         $controller = new $controllerName;
 
         if (! method_exists($controller, $action)) {

@@ -1,12 +1,14 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\App;
+
 class PagesController
 {
     public function home()
     {
-        require 'Task.php';
         $tasks = App::get('database')->selectAll('todos', 'Task');
-
         return view('index', compact('tasks', 'users'));
     }
 

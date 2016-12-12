@@ -1,10 +1,14 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\App;
+
 class UserController
 {
     public function index()
     {
-        $users = App::get('database')->selectAll('users');
+        $users = App::get('database')->selectAll('users', 'User');
         return view('users', [
             'users' => $users
         ]);
