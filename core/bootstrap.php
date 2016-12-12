@@ -18,3 +18,15 @@ App::bind('config', require 'config.php');
 App::bind('database', new QueryBuilder(
     Connection::make(App::get('config')['database_config'])
 ));
+
+// helper
+function view($name, $data = [])
+{
+    extract($data); // ['nmae' => 'A', 'age' => 24] ==> $name='A'; $age=24;
+    return require "views/{$name}.view.php";
+}
+
+function redirect($path)
+{
+    header("Location: /{$path}");
+}
