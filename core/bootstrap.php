@@ -25,7 +25,7 @@ App::bind('database', new QueryBuilder(
 function view($name, $data = [])
 {
     extract($data); // ['nmae' => 'A', 'age' => 24] ==> $name='A'; $age=24;
-    return require "views/{$name}.view.php";
+    return require "app/views/{$name}.view.php";
 }
 
 function redirect($path)
