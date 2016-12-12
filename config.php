@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'database' => [
+    'database_config' => [
         'name' => 'mytodo',
         'username' => 'root',
         'password' => '',
