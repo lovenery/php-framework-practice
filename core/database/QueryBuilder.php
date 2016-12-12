@@ -13,6 +13,9 @@ class QueryBuilder
     {
         $statement = $this->pdo->prepare("select * from {$table}");
         $statement->execute();
+        // return $statement->fetchAll(PDO::FETCH_OBJ); // 這個也可以
+        // return $statement->fetchAll(PDO::FETCH_CLASS); // 這個也可以
+        // 但這樣才可用model裡的method, ex: $tasks[0]->foobar();
         return $statement->fetchAll(PDO::FETCH_CLASS, "App\\Models\\{$intoClass}");
     }
 
