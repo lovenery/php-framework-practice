@@ -1,6 +1,5 @@
 <?php
 // php -S localhost:8888
-require 'function.php';
 // php --interactive == php -a
 ////////////////////////
 
